@@ -1,0 +1,30 @@
+{
+  "name": "cordova-browsersync-primitives",
+  "version": "1.0.0",
+  "description": "Various tweaks needed to enable browsersync for cordova apps",
+  "main": "index.js",
+  "author": "Andre Asselin <andre.asselin@pointsource.com>",
+  "contributors": [
+  	"Andre Asselin <andre.asselin@pointsource.com>",
+  	"Parashuram <code@nparashuram.com>"
+  ],
+  "files": [
+    "*"
+  ],
+  "keywords": [
+    "cordova",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios",
+    "browser sync"
+  ],
+  "dependencies": {
+    "browser-sync": ">=2.11",
+    "cheerio": "0.x",
+    "csp-parse": "0.x",
+    "elementtree": "0.x",
+    "plist": "1.x"
+  },
+  "repository": "PointSource/cordova-browsersync-primitives",
+  "license": "Apache-2.0"
+}
