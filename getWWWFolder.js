@@ -8,7 +8,7 @@ function getWWWFolder(platform) {
 	};
 
 	return ['platforms', platform, WWW_FOLDER[platform]].join('/');
-};
+}
 
 
 module.exports = getWWWFolder;
