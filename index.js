@@ -6,6 +6,7 @@ var fixATS = require('./fixATS');
 var startBrowserSync = require('./startBrowserSync');
 var getWWWFolder = require('./getWWWFolder');
 var updateConfigXml = require('./updateConfigXml');
+var isPlatformSupported = require('./isPlatformSupported');
 
 module.exports = {
 	addCSP: addCSP,
@@ -13,5 +14,6 @@ module.exports = {
 	fixATS: fixATS,
 	startBrowserSync: startBrowserSync,
 	getWWWFolder: getWWWFolder,
-	updateConfigXml: updateConfigXml
+	updateConfigXml: updateConfigXml,
+	isPlatformSupported: isPlatformSupported
 };
