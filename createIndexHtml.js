@@ -6,10 +6,12 @@ var url = require('url');
 var getWWWFolder = require('./getWWWFolder');
 
 
-function createIndexHtml(servers, platform, cordovaDir) {
+function createIndexHtml(servers, platform, cordovaDir, dest) {
 	var html = fs.readFileSync(path.join(__dirname, 'browser-sync-start.html'), 'utf-8');
 
-	var dest = path.join(cordovaDir, 'www/index.html');
+	if (!dest)
+		dest = path.join(cordovaDir, 'www/index.html');
+
 	var data = {};
 	for (var key in servers) {
 		if (typeof servers[key] !== 'undefined') {
@@ -18,6 +20,5 @@ function createIndexHtml(servers, platform, cordovaDir) {
 	}
 	fs.writeFileSync(dest, html.replace(/__SERVERS__/, JSON.stringify(data)));
 };
-
 
 module.exports = createIndexHtml;
