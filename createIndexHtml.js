@@ -1,14 +1,12 @@
 'use strict';
 
 var path = require('path');
-var fs = require('fs');
 var url = require('url');
 var getWWWFolder = require('./getWWWFolder');
+var createIndexHtml = require('./createIndexHtmlForWebpack');
 
 
-function createIndexHtml(servers, platform, cordovaDir, dest) {
-	var html = fs.readFileSync(path.join(__dirname, 'browser-sync-start.html'), 'utf-8');
-
+function createIndexHtmlForBrowserSync(servers, platform, cordovaDir, dest) {
 	if (!dest)
 		dest = path.join(cordovaDir, 'www/index.html');
 
@@ -18,7 +16,8 @@ function createIndexHtml(servers, platform, cordovaDir, dest) {
 			data[key] = url.resolve(servers[key], getWWWFolder(platform) + '/index.html');
 		}
 	}
-	fs.writeFileSync(dest, html.replace(/__SERVERS__/, JSON.stringify(data)));
+
+	return createIndexHtml(data, dest);
 };
 
-module.exports = createIndexHtml;
+module.exports = createIndexHtmlForBrowserSync;
