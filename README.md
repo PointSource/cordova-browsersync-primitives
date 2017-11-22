@@ -4,10 +4,10 @@ This npm package contains common code used to implement browsersync with cordova
 
 ## addCSP(filename)
 
-###Parameters
+### Parameters
 * String filename - name of the HTML file to update.
   
-###Returns
+### Returns
 * Nothing.
 
 ### Description
@@ -15,13 +15,13 @@ Reads the HTML file specified by `filename`, updates the Content-Security-Policy
 
 ## createIndexHtml(servers, platform, cordovaDir, [dest])
 
-###Parameters
+### Parameters
 * Object servers - The list of IP addresses supplied by browsersync that it is listening on.  
 * String platform - Which platform (`android` or `ios`) the page should be built for.  Affects the URLs embedded in the generated HTML file.
 * String cordovaDir - Base directory of the cordova project.
 * String dest (optional) - Location to save the start page.  If not specified, defaults to `<cordovaDir>/www/index.html`.
 
-###Returns
+### Returns
 * Nothing.
 
 ### Description
@@ -32,11 +32,11 @@ This function embeds the IP addresses that the browsersync server is listening o
 
 ## fixATS(cordovaDir, projectName)
 
-###Parameters
+### Parameters
 * String cordovaDir - Base directory of the cordova project.
 * String projectName - The name given to the cordova project at creation i.e. `cordova create <PATH> <ID> <NAME>`
   
-###Returns
+### Returns
 * Nothing.
 
 ### Description
@@ -44,13 +44,13 @@ Updates the iOS platform's `<projectName>-Info.plist` file to disable AppTranspo
 
 ## startBrowserSync(cordovaDir, platforms, opts, cb)
 
-###Parameters
+### Parameters
 * String cordovaDir - Base directory of the cordova project.
 * String[] platforms - Array of strings, each of which is a Cordova platform name to serve.
 * Object | Function opts - Options object to be passed to browserSync. If this is a function, the function is called with default values and should return the final options to be passed to browser-sync.
 * Function(err, browserSyncInfo) cb - A callback when server is ready.
   
-###Returns
+### Returns
 * Object - The browsersync instance created.
 
 ### Description
@@ -59,7 +59,7 @@ Creates and initializes a browsersync instance.  When the instance is ready, `cb
 * Object err - An error object given by browsersync.
 * Object browserSyncInfo - Info about the browsersync instance.  Format:
 
-````
+```
 Object {
 	Object bsInstance - The browsersync instance.
 	Object servers {
@@ -67,14 +67,14 @@ Object {
 		String external (optional) - Base URL for external address.  Example: http://10.128.64.174:3000
 	}
 }
-````
+```
 
 ## getWWWFolder(platform)
 
-###Parameters
+### Parameters
 * String platform - Specifies which platform's path (`android` or `ios`) is desired.
 
-###Returns
+### Returns
 * String - The path of the platform www directory.  **Note:** This path *always* uses `/` delimiters.
 
 ### Description
@@ -83,13 +83,13 @@ Returns the path of `platform`'s www directory relative to the cordova root dire
 
 ## updateConfigXml(cordovaDir, platform, projectName, hostedPage)
 
-###Parameters
+### Parameters
 * String cordovaDir - Base directory of the cordova project.
 * String platform - Specifies which platform's config.xml file (`android` or `ios`) should be updated.
 * String projectName - The name given to the cordova project at creation i.e. `cordova create <PATH> <ID> <NAME>`
 * String hostedPage - Name of the starting HTML file that is embedded in the APK or IPA file. 
    
-###Returns
+### Returns
 * Nothing.
 
 ### Description
@@ -100,10 +100,10 @@ Updates `platform`'s config.xml file.  Two things are changed:
 
 ## isPlatformSupported(platform)
 
-###Parameters
+### Parameters
 * String platform - Specifies the name of the platform to test for support.
   
-###Returns
+### Returns
 * Boolean - Returns true if the platform is supported; false otherwise.
 
 ### Description
